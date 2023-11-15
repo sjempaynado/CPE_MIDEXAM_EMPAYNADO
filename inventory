@@ -1,0 +1,23 @@
+[servers]
+192.168.56.108
+192.168.56.105 ansible_python_interpreter=/usr/bin/python2
+[ElasticS]
+192.168.56.105 ansible_python_interpreter=/usr/bin/python2
+[Kibana]
+192.168.56.105 ansible_python_interpreter=/usr/bin/python2
+[Logstash]
+192.168.56.105 ansible_python_interpreter=/usr/bin/python2
+[Nagios]
+192.168.56.108
+[Grafana]
+192.168.56.105 ansible_python_interpreter=/usr/bin/python2
+[Influxdb]
+192.168.56.108
+[Prometheus]
+192.168.56.108
+[HttpdPhP]
+192.168.56.108
+192.168.56.105 ansible_python_interpreter=/usr/bin/python2
+[Mariadb]
+192.168.56.108
+192.168.56.105 ansible_python_interpreter=/usr/bin/python2

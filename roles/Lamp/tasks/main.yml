@@ -1,0 +1,45 @@
+- name: Install Httpd in Ubuntu
+  apt:
+    name: apache2
+    state: latest
+  when: ansible_distribution == "Ubuntu"
+
+- name: Start Apache in Ubuntu
+  service:
+    name: apache2
+    state: restarted
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install Httpd in CentOS
+  dnf:
+    name: httpd
+    state: latest
+  when: ansible_distribution == "CentOS"
+
+- name: Start Httpd in CentOS
+  service:
+    name: httpd
+    state: restarted
+  when: ansible_distribution == "CentOS"
+
+- name: Start Httpd in Ubuntu
+  service:
+    name: apache2
+    state: restarted
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install Mariadb in Ubuntu and CentOS
+  package:
+     name: mariadb-server
+     state: latest
+
+- name: Start Mariadb
+  service:
+    name: mariadb
+    state: restarted
+    enabled: true
+
+- name: Install Php
+  package:
+    name: php
+    state: latest

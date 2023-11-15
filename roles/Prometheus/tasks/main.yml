@@ -1,0 +1,9 @@
+- name: Installation of Prometheus for Ubuntu
+  apt:
+    name:
+      - prometheus
+    state: latest
+
+- name: Enabling snapd
+  command: systemctl enable --now snapd.socket
+

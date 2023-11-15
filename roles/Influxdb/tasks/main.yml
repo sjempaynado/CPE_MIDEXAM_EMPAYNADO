@@ -1,0 +1,16 @@
+- name: Download the Influxdb Package
+  shell: curl -sL https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+  when: ansible_distribution == "Ubuntu"
+
+- name: Update again Ubuntu to read the Influxdb Package in Ubuntu
+  apt:
+    upgrade: dist
+    update_cache: yes
+  changed_when: false
+  when: ansible_distribution == "Ubuntu"
+
+- name: Install Influxdb in Ubuntu
+  apt:
+    name: influxdb
+    state: present
+  when: ansible_distribution == "Ubuntu"
